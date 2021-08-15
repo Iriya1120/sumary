@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 写在函数原型上有两个作用：1.为了能够实现函数名._apply的形式；2.为了能够获取到this（this指的是Function.prototype即b）
+        Function.prototype._apply = function(){
+            // 获取上下文对象
+            let context = arguments[0] || window;
+            context.fn = this;
+            // 记录参数 => args = [{a: 'liyan'}, ['a哦','b哦']]
+            let args = [...arguments];
+            // 对象出队列以获取实际的参数 => args = [['a哦','b哦']]
+            args.shift();
+            // 执行函数,并将参数解构传入
+            let result = context.fn(...args[0]);
+            // 删除自己创建的函数fn
+            delete context.fn;
+            // 返回函数运行的结果
+            return result;
+        }
+
+        let obj = {
+            a: 'liyan'
+        }
+
+        function b(a,b){
+            console.log('Hello ' + this.a, 'a:'+a, 'b:'+ b);
+        }
+
+        b._apply(obj, ['a哦','b哦'])
+
+    </script>
+</body>
+</html>

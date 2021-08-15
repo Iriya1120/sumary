@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function _clap(){
+        //     return [...arguments].flat(Infinity);
+        // }
+
+        // function _clap(){
+        //     return [...arguments].toString().split(/,/g).map(item => {return Number(item)});
+        // }
+
+        // function _clap(){
+        //     let arr = [];
+        //     let [args] = [...arguments];
+        //     for(let i = 0; i < args.length; i++){
+        //         if(Object.prototype.toString.call(args[i]) === '[object Array]'){
+        //             arr = arr.concat(_clap(args[i]))
+        //         }else {
+        //             arr.push(args[i])
+        //         }
+        //     }
+
+        //     return arr;
+        // }
+
+        console.log(_clap([1,2,3,[4,5,[6,7],8,9],10]));
+    </script>
+</body>
+</html>

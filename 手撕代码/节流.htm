@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 节流是在指定的delay毫秒内事件处理函数只会执行一次，执行的是第一次。
+        function _throttle(eventHandler, delay){
+            let timer = null;
+            return function() {
+                if(!timer){     // 如果这是在delay毫秒内第一次进入函数，则设置定时器，在delay毫秒内之后触发的所有事件都将会被忽略
+                    setTimeout(() => {
+                        eventHandler();
+                        timer = null;   // 这一步很重要，表示delay这个时间段已经结束，可以开始下一个周期
+                    }, delay)
+                }
+            }
+        }
+    </script>
+</body>
+</html>

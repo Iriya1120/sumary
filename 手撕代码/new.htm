@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function _new() {
+            let obj = {};
+            let Constructor = Array.prototype.shift.call(arguments);    // 获取第一个参数，即构造器
+            obj.__proto__ = Constructor.prototype;      // 改变obj的原型对象 Object.prototype => 自身的构造器.prototype
+            let result = Constructor.apply(obj, arguments);     // 调用构造器返回对象实例
+            return typeof result === 'object' ? result : obj;
+        }
+
+        function Person(pName, age){
+            this.pName = pName;
+            this.age = age;
+        }
+
+        Person.prototype.sayHello = function() {
+            console.log(this.pName + 'Hello!');
+        }
+
+        let person = _new(Person, 'Person', 10);
+        let person2 = _new(Person, 'Person2', 20);
+        console.log(person, person2);
+        person.sayHello();
+        person2.sayHello();
+    </script>
+</body>
+</html>

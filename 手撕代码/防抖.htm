@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 防抖是在触发事件后的n秒内不再触发事件，触发的是最后一次事件；当在n秒内触发多次事件，将重新计时
+        function _antiShake(eventHandler, delay){
+            let timer = null;
+            return function(){
+                if(timer) { // 初次执行时，跳过此步骤，此后每一次都会清楚之前的定时器
+                    clearTimeout(timer);
+                }
+                // 初次执行时，设置delay毫秒后执行事件处理函数eventHandler,当在还没有delay毫秒时间内需要再次执行事件处理时，
+                // 将会清除之前设定的定时器，并且重新设置一个新的定时器，在delay毫秒后执行eventHandler
+                timer = setTimeout(() => {  
+                    eventHandler();
+                }, delay)
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span id="s"></span>
+    <input type="text" id="inp">
+    <script>
+        // let str = ' {{name}} is very clever，and has accomlished the task within {{time}}.';
+        // let obj = {name: '王竹月', time: {time: '15分钟'}};
+        // let reg = /{{([\s\S]+?)}}/g
+        // str = str.replace(reg, (str, key) => {
+        //     return obj[key]
+        // })
+
+        // console.log(str);
+
+
+        // 好未来笔试题
+        // let str = '<div>{{$0}}({{$1}})</div>';
+        // let arr = ['好未来', 'TAL'];
+        // let reg = /{{([\s\S]+?)}}/g
+        // str = str.replace(reg, () => arr.shift())
+        // console.log(str);
+
+        // 测试$&匹配内容
+        // let str = '教育事业正变得异常紧张。';
+        // str = str.replace(/教育/, `<a href='https://www.baidu.com'>$&</a>`)
+        // document.getElementById('s').innerHTML = str;
+
+        // 测试断言
+        // let str = '教育事业正变得异常紧张。教育!加油';
+        // str = str.replace(/教育(?=!)/g, `<a href='https://www.baidu.com'>$&</a>`)
+        // document.getElementById('s').innerHTML = str;
+
+
+        // 替换电话号码 13364033986 => 133****3986
+        // let phone = '13364033986';
+        // let reg = /(?<=\d{3})(\d{4})(?=\d{4})/;
+        // phone = phone.replace(reg, '****');
+        // console.log(phone);
+
+        // 限制关键字
+        // let reg = /(?<!.*李焱.*)[a-z]{6}/;
+        // let input = document.getElementById('inp');
+        // input.addEventListener('keyup', function(e){
+        //     console.log(e.target.value.match(reg));
+        // })
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let reg = /[12445]/
+        // let reg = /(1|2|3|4)/
+        // let reg = /236/
+        // let str = '36225145235';
+        // console.log(reg.test(str));
+
+
+        // 匹配url
+        // let url = 'https://www.baidu.com'
+        // let reg = /^https?\:\/\/\w+\.\w+\.\w+/
+        // console.log(reg.test(url));
+
+        // 匹配所有字符
+        // [\d\D] [\s\S] [\w\W]
+        // let str = `
+        // sgd@4$^ nsbaj
+        // 23dgshvvx
+        // `;
+        // let reg = /[\d\D]+/;
+        // let reg = /[\s\S]+/;
+        // let reg = /[\w\W]+/;
+        // console.log(str.match(reg));
+
+        // 模式修正符
+        // let str = 'dhjwU ju';
+        // let reg = /u/gi;
+        // console.log(str.match(reg));
+
+        // exec 方法
+        // let str = 'sgdjewgyg';
+        // g 会记录上一次位置，如果不加，每一次都是0
+        // let reg = /g/
+        // console.log(reg.exec(str));
+        // console.log(reg.exec(str));
+
+        // 匹配汉字 u 不可缺少
+        // let str = '肖阳yyds';
+        // let reg = /\p{sc=Han}+/u
+        // console.log(str.match(reg));
+    </script>
+</body>
+</html>

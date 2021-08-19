@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 给定两个字符串形式的非负整数 num1 和num2 ，计算它们的和。
+        // num1 和num2 的长度都小于 5100
+        // num1 和num2 都只包含数字 0-9
+        // num1 和num2 都不包含任何前导零
+        // 你不能使用任何內建 BigInteger 库， 也不能直接将输入的字符串转换为整数形式
+        // 555 45
+
+        var addStrings = function(num1, num2) {
+            num1 = num1.split('');
+            num2 = num2.split('');
+            let res = [];
+            let add = 0;    // 是否进位
+            while(num1.length != 0 || num2.length != 0 || add){
+                let temp = parseInt(num1.pop() || 0) + parseInt(num2.pop() || 0);
+                if(add){
+                    // 需要进位时
+                    res.unshift((temp + add) % 10)
+                }else {
+                    res.unshift(temp % 10)
+                }
+                add = temp + add >= 10 ? 1 : 0;
+            }
+            return res.join('');
+        };
+
+        console.log(addStrings('555', '45'));
+    </script>
+</body>
+</html>

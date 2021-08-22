@@ -30,6 +30,7 @@
         //     return indexArr;
         // };
 
+        // 暴力求解
         var twoSum = function(nums, target) {
             for(let i = 0; i < nums.length; i++){
                 for(let j = i + 1; j < nums.length; j++){
@@ -41,10 +42,25 @@
         };
 
 
+        // hashSet求解
+        var _twoSum = function(nums, target) {
+            let map = new Map()
+            for(let i = 0; i < nums.length; i++){
+                map.set(nums[i], i)
+            }
 
-        console.log(twoSum([3,2,3], 6));
+            for(let i = 1; i < nums.length; i++){
+                let rest = target - nums[i]
+                if(map.has(rest) && map.get(rest) != i){
+                    return [i, map.get(rest)]
+                }
+            }
 
-        console.log(parseInt(undefined || 0));
+        };
+
+
+
+        console.log(_twoSum([3,2,4], 6));
     </script>
 </body>
 </html>

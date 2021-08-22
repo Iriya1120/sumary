@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function generateParenthesis(n){
+            let res = [];   // 记录结果的数组
+
+            const backTracing = (left, right, str) => {
+                if(right > left) return
+                if(left == right && left == n){
+                    res.push(str)
+                    return
+                }
+                if(left < n){   // 左括号还有没有用完的
+                    backTracing(left + 1, right, str + '(')
+                }
+                if(left > right){
+                    backTracing(left, right + 1, str + ')')
+                }
+            }
+
+            backTracing(0, 0, '')
+
+            return res
+        }
+
+        console.log(generateParenthesis(2));
+    </script>
+</body>
+</html>

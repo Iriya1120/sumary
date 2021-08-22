@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function TreeNode(val, left, right) {
+            this.val = (val===undefined ? 0 : val)
+            this.left = (left===undefined ? null : left)
+            this.right = (right===undefined ? null : right)
+        }
+
+        let root = new TreeNode(5);
+        let root1 = new TreeNode(4);
+        let root2 = new TreeNode(8);
+        let root3 = new TreeNode(11);
+        let root4 = new TreeNode(13);
+        let root5 = new TreeNode(4);
+        let root6 = new TreeNode(7);
+        let root7 = new TreeNode(2);
+        let root8 = new TreeNode(1);
+        root.left = root1;
+        root.right = root2;
+        root1.left = root3;
+        root2.left = root4;
+        root2.right = root5;
+        root3.left = root6;
+        root3.right = root7;
+        root5.right = root8;
+
+         // 递归
+        //  function preOrder(root){
+        //     let res = []; // 存放结果的数组
+        //     if(!root) return res;
+
+        //     const order = (root) => {
+        //         res.push(root.val);
+        //         if(root.left) order(root.left);
+        //         if(root.right) order(root.right);
+        //     }
+
+        //     order(root);
+        //     return res;
+        // }
+
+
+        // 迭代(需要使用栈)
+        function preOrder(root) {
+            let res = [];
+            let stack = []; // 栈
+            if(!root) return res;
+            stack.push(root);
+            while(stack.length != 0){
+                let curVal = stack.pop();
+                res.push(curVal.val);
+                if(curVal.right) stack.push(curVal.right);
+                if(curVal.left) stack.push(curVal.left);
+            }
+
+            return res;
+        }
+
+        console.log(preOrder(root));        // [5, 4, 11, 7, 2, 8, 13, 4, 1]
+
+    </script>
+</body>
+</html>

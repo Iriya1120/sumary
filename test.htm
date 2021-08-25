@@ -8,40 +8,64 @@
 </head>
 <body>
     <script>
-        var longestPalindrome = function(s) {
-            let len = s.length
-            if(len < 2) return s
+        // var longestPalindrome = function(s) {
+        //     let len = s.length
+        //     if(len < 2) return s
             
-            let begin = 0;
-            let maxLen = 1;
+        //     let begin = 0;
+        //     let maxLen = 1;
             
 
-            const getMaxLen = (left, right) => {
-                while(left >= 0 && right < len){
-                    if(s[left] === s[right]){
-                        left --
-                        right ++
-                    }else {
-                        break
-                    }
-                }
-                return right - left - 1
-            }
+        //     const getMaxLen = (left, right) => {
+        //         while(left >= 0 && right < len){
+        //             if(s[left] === s[right]){
+        //                 left --
+        //                 right ++
+        //             }else {
+        //                 break
+        //             }
+        //         }
+        //         return right - left - 1
+        //     }
 
-            for(let i = 0; i < len - 1; i++){
-                let oddLen = getMaxLen(i, i)
-                let evenLen = getMaxLen(i, i + 1)
-                let curMaxLen = Math.max(oddLen, evenLen)
-                if(curMaxLen > maxLen){
-                    maxLen = curMaxLen
-                    begin = i - Math.floor((maxLen - 1) / 2)
-                }
-            }
+        //     for(let i = 0; i < len - 1; i++){
+        //         let oddLen = getMaxLen(i, i)
+        //         let evenLen = getMaxLen(i, i + 1)
+        //         let curMaxLen = Math.max(oddLen, evenLen)
+        //         if(curMaxLen > maxLen){
+        //             maxLen = curMaxLen
+        //             begin = i - Math.floor((maxLen - 1) / 2)
+        //         }
+        //     }
 
-            return s.substring(begin, begin + maxLen)
+        //     return s.substring(begin, begin + maxLen)
+        // };
+
+        // console.log(longestPalindrome("cbbd"));
+
+        function ListNode(val) {
+            this.val = val;
+            this.next = null;
+        }
+
+        let l1 = new ListNode(2)
+        let l2 = new ListNode(6)
+        let l3 = new ListNode(4)
+        let l4 = new ListNode(1)
+        let l5 = new ListNode(5)
+        l1.next = l2
+        l2.next = l3
+        l4.next = l5
+        var getIntersectionNode = function(headA, headB) {
+            let pA = headA, pB = headB
+            while(pA != pB){
+                pA = pA == null ? headB : pA.next
+                pB = pB == null ? headA : pB.next
+            }
+            return pA
         };
 
-        console.log(longestPalindrome("cbbd"));
+        console.log(getIntersectionNode(l1,l4));
     </script>
 </body>
 </html>

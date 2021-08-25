@@ -43,29 +43,83 @@
 
         // console.log(longestPalindrome("cbbd"));
 
-        function ListNode(val) {
-            this.val = val;
-            this.next = null;
-        }
+        // function ListNode(val) {
+        //     this.val = val;
+        //     this.next = null;
+        // }
 
-        let l1 = new ListNode(2)
-        let l2 = new ListNode(6)
-        let l3 = new ListNode(4)
-        let l4 = new ListNode(1)
-        let l5 = new ListNode(5)
-        l1.next = l2
-        l2.next = l3
-        l4.next = l5
-        var getIntersectionNode = function(headA, headB) {
-            let pA = headA, pB = headB
-            while(pA != pB){
-                pA = pA == null ? headB : pA.next
-                pB = pB == null ? headA : pB.next
-            }
-            return pA
-        };
+        // let l1 = new ListNode(2)
+        // let l2 = new ListNode(6)
+        // let l3 = new ListNode(4)
+        // let l4 = new ListNode(1)
+        // let l5 = new ListNode(5)
+        // l1.next = l2
+        // l2.next = l3
+        // l4.next = l5
+        // var getIntersectionNode = function(headA, headB) {
+        //     let pA = headA, pB = headB
+        //     while(pA != pB){
+        //         pA = pA == null ? headB : pA.next
+        //         pB = pB == null ? headA : pB.next
+        //     }
+        //     return pA
+        // };
 
-        console.log(getIntersectionNode(l1,l4));
+        // console.log(getIntersectionNode(l1,l4));
+
+        // console.log('1,3,4,6,9'.split(','));
+
+
+        // let arr = '[1,3,4,6,9]'.substring(1, arr.length - 1)
+        // let target = 10
+        // arr = arr.split(/,/).map((item) => parseInt(item))
+        // let map = []
+        // let f = false
+        // for(let i = 0; i < arr.length; i++){
+        //     let temp = target - arr[i]
+        //     if(map.indexOf(temp) > -1){
+        //         console.log(true);
+        //         f = true
+        //         break
+        //     }else{
+        //         map.push(arr[i])
+        //     }
+        // }
+
+        // if(!f) console.log(false);
+
+        // let arr = [1,3,2,3,2,2,1,2]
+        // let target = 2
+        // let map = new Map()
+        // for(let i = 0; i < arr.length; i++){
+        //     if(map.has(arr[i])){
+        //         map.set(arr[i], map.get(arr[i]) + 1)
+        //     }else {
+        //         map.set(arr[i], 1)
+        //     }
+        // }
+        // console.log(map);
+        // let arrs = Array.from(map)
+        // arrs.sort((o1,o2) => {
+        //     if(o1[1] === o2[1]){
+        //         return o1[0] - o2[0]
+        //     }else {
+        //         return o2[1] - o1[1]
+        //     }
+        // })
+        // console.log(arrs[target - 1][0] + ' ' + arrs[target - 1][1]);
+
+
+        // let arr = ["bilibili.com", "master@bilibili.com", "test.bilibili@bilibili.com", "test@bilibili.biliil.com", "test.bilibili.com", "test.bili@bili.com"]
+
+        // let a = []
+        // for(let i = 0;i < arr.length; i++){
+        //     if(!arr[i].endsWith('.com') || !(arr[i].indexOf('@') > -1)){
+        //         a.push(arr[i])
+        //     }
+        // }
+
+        // console.log(a);
     </script>
 </body>
 </html>

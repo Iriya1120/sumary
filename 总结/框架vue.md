@@ -46,3 +46,16 @@
 ### Vuex和全局变量的区别 ###
 1. Vuex 的状态存储是响应式的
 2. 不能直接改变 store 中的状态，而必须显式的提交mutation
+
+
+### Vue 与 React 的异同点 ###
+- 相同点： 
+  1. 都是JavaScript的UI框架。
+  2. 都用了虚拟DOM。
+  3. 提供了响应式 (Reactive) 和组件化 (Composable) 的视图组件。
+  4. 将注意力集中保持在核心库，而将其他功能如路由和全局状态管理交给相关的库。
+- 不同点：
+  1. Vue 的模板与 React 的 JSX (JSX只是JavaScript混合着XML语法)
+  2. 状态管理。 在 React 中状态是关键，但是在Vue中不是必须的
+  3. React Native。 React Native能在手机上创建原生应用
+  4. 优化方面(计算虚拟DOM的异同)

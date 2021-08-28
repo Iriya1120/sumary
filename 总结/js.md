@@ -121,3 +121,8 @@
 
 ### JS变量提升 ###
 - 理解： 变量提升是指在JS代码执行前会将变量的声明提升到作用域的顶部，等到执行到的时候再进行赋值
+
+
+### 懒加载的实现方法 ###
+1. 使用 scrollTop / innerTop / offsetTop 监听鼠标滚动事件
+2. Intersection Observer (交叉观察)

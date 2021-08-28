@@ -120,6 +120,31 @@
         // }
 
         // console.log(a);
+
+        // const { count } = require('console'); 
+        // var fs = require('fs'); 
+        // var buf = ''; 
+        
+        // process.stdin.on('readable', function () { 
+        //     var chunk = process.stdin.read(); 
+        
+        //     if (chunk) {
+        //         buf += chunk.toString(); 
+        //     }
+        // }); 
+        
+        // process.stdin.on('end', function () { 
+        //     console.log(buf)
+        // });
+
+        function Person(){
+            this.name = 'hahhah'
+        }
+
+        let p1 = new Person()
+        let p2 = Object.create(p1)
+
+        console.log(p1,p2);
     </script>
 </body>
 </html>

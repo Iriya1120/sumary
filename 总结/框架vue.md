@@ -66,7 +66,7 @@
 
 
 ### Vue nextTick的作用 ###
-- 在下一次DOM更新后获取到更新后的DOM
+- 在下一次DOM更新后获取到更新后的DOM。vue更新DOM是异步的
 - 可以用来替换 mounted 函数，因为 mounted 不会承诺所有的子组件也都一起被挂载。
 
 
@@ -111,3 +111,76 @@
 - 父组件记录子组件状态
 
 
+### 单页面应用(SPA)与多页面应用(WPA)的区别 ###
+- 结构： 单页面应用是一个页面+许多模块；多页面应用是多个完整页面
+- 切换： 单页面应用切换快； 多页面应用切换慢
+- 公共资源加载： 单页面(一次); 多页面(独立)
+- 适用场景： 单页面应用:体验和流畅度高； 多页面应用:对SEO要求高
+
+
+### Vue 模版到渲染的过程 ###
+- 过程: template -> ast -> 优化optimize -> render
+  - 优化： 判断静态节点(包含表达式｜v-if｜v-show等指令的节点)，对不是静态节点的节点进行优化
+
+
+### extends 与 mixin ###
+- mixin混合，可以理解为多继承； extends继承，可以理解为单继承
+
+
+### assets和static的理解 ###
+- 相同点：它们都是用来存放静态资源文件的
+- 不同点：assets内的资源文件会经过打包压缩进入static，而static则不会
+
+
+### MVVM的优缺点 ###
+- 优点:
+  1. 分离视图和模型，降低耦合度
+  2. 双向绑定自动更新DOM
+- 缺点：
+  1. Bug很难被调试
+  2. 对于⼤型的图形应⽤程序，视图状态较多，ViewModel的构建和维护的成本都会⽐较⾼
+
+
+### 怎么获取到hash值的变化 ###
+1. 监听$route
+2. location.hash读取hash值判断是否改变
+
+
+### 路由 query 与 params 的区别 ###
+1. 引入方式：
+  - query： 以 path 引入，跳转是this.$router.push({path: '/path', query: {}})
+  - params: 以 name 引入，跳转是this.$router.push({name: 'name', params: {}})
+2. 在url上的显示:
+  - query: query类似于GET， 参数在url上显示
+  - params: params类似于POST， 参数在url上不显示
+3. 刷新: 
+  - query: query在刷新页面时，参数不会丢失
+  - params: params在刷新页面时，参数会丢失
+
+
+### vue-router导航守卫有哪些 ###
+1. 全局前置/钩子：beforeEach、beforeResolve、afterEach
+2. 路由独享的守卫：beforeEnter
+3. 组件内的守卫：beforeRouteEnter、beforeRouteUpdate、beforeRouteLeave
+
+
+### 前端路由的理解 ###
+- 在早期，一个url对应一个页面，如果需要切换页面就必然会导致页面刷新，这种体验并不好，随着ajax出现，不刷新页面也能更新页面这样的需求，出现了SPA，但是那个时期的SPA没有路由的概念，SPA并不会记录状态。所以就出现了前端路由。其实只是起到一个标识作用。
+
+
+### Vuex 与 localStorage 的区别 ###
+- Vuex存储在内存中，localStorage则是以文件的形式存储在本地
+- Vuex可以做到响应式[Vue.set()]，但是localStorage不行
+
+
+### Vue严格模式 ###
+- 在严格模式下，无论何时发生了状态变更且不是由mutation函数引起的，将会抛出错误。这能保证所有的状态变更都能被调试工具跟踪到。通过在实例化时设置strict来开启严格模式
+
+
+### vue中key的作用 ###
+- 在v-if中的key： 用来标识一个独立的元素
+- 在v-for中的key： v-for默认是就地复用，作用是:高效的更新渲染虚拟DOM
+
+
+### 为什么不建议用index作key ###
+- 使用index 作为 key和没写基本上没区别，因为不管数组的顺序怎么颠倒，index 都是 0, 1, 2...这样排列，导致 Vue 会复用错误的旧子节点，做很多额外的工作。

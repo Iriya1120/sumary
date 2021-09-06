@@ -137,15 +137,35 @@
         //     console.log(buf)
         // });
 
-        function Person(){
-            this.name = 'hahhah'
+        // function Person(){
+        //     this.name = 'hahhah'
+        // }
+
+        // let p1 = new Person()
+        // let p2 = Object.create(p1)
+
+        // console.log(p1,p2);
+        // console.log('1234565');
+
+        
+        class A {
+            static c (){
+                console.log(this.name);
+            }
+
+            constructor({color='yellow'} = {color: 'green'}){
+                console.log(color);
+                this.name = 'liyan'
+                this.x = A.c
+            }
+
+            
         }
 
-        let p1 = new Person()
-        let p2 = Object.create(p1)
+        let a = new A({color: 'purple'})
+        a.x()
 
-        console.log(p1,p2);
-        console.log('1234565');
+        // console.log();
     </script>
 </body>
 </html>

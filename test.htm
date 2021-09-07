@@ -148,24 +148,51 @@
         // console.log('1234565');
 
         
-        class A {
-            static c (){
-                console.log(this.name);
-            }
+        // class A {
+        //     static c (){
+        //         console.log(this.name);
+        //     }
 
-            constructor({color='yellow'} = {color: 'green'}){
-                console.log(color);
-                this.name = 'liyan'
-                this.x = A.c
-            }
+        //     constructor({color='yellow'} = {color: 'green'}){
+        //         console.log(color);
+        //         this.name = 'liyan'
+        //         this.x = A.c
+        //     }
 
             
-        }
+        // }
 
-        let a = new A({color: 'purple'})
-        a.x()
+        // let a = new A({color: 'purple'})
+        // a.x()
 
         // console.log();
+
+        function perfect(num) {
+            let arr = num.split('').map(item => parseInt(item))
+            let isP = isPerfect(arr)
+            if(isP) return arr.join('')
+
+            for(let i = arr.length - 1; i >= 0; i--){
+                for(let j = 3; j >= 1; j--){
+                    arr[i] = j
+                    if(isPerfect(arr) && parseInt(arr.join('')) <= num){
+                        return parseInt(arr.join(''))
+                    }
+                    if(j == 1) {
+                        arr[i] = 3
+                    }
+                }           
+            }
+            arr.shift()
+            return parseInt(arr.join(''))
+        }
+
+        function isPerfect(arr){
+            return arr.every(item => item == 1 || item == 2 || item == 3)
+        }
+
+        console.log(perfect('1999999999999999999999'));
+        
     </script>
 </body>
 </html>

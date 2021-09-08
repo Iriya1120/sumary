@@ -167,31 +167,41 @@
 
         // console.log();
 
-        function perfect(num) {
-            let arr = num.split('').map(item => parseInt(item))
-            let isP = isPerfect(arr)
-            if(isP) return arr.join('')
+        // function perfect(num) {
+        //     let arr = num.split('').map(item => parseInt(item))
+        //     let isP = isPerfect(arr)
+        //     if(isP) return arr.join('')
 
-            for(let i = arr.length - 1; i >= 0; i--){
-                for(let j = 3; j >= 1; j--){
-                    arr[i] = j
-                    if(isPerfect(arr) && parseInt(arr.join('')) <= num){
-                        return parseInt(arr.join(''))
-                    }
-                    if(j == 1) {
-                        arr[i] = 3
-                    }
-                }           
+        //     for(let i = arr.length - 1; i >= 0; i--){
+        //         for(let j = 3; j >= 1; j--){
+        //             arr[i] = j
+        //             if(isPerfect(arr) && parseInt(arr.join('')) <= num){
+        //                 return parseInt(arr.join(''))
+        //             }
+        //             if(j == 1) {
+        //                 arr[i] = 3
+        //             }
+        //         }           
+        //     }
+        //     arr.shift()
+        //     return parseInt(arr.join(''))
+        // }
+
+        // function isPerfect(arr){
+        //     return arr.every(item => item == 1 || item == 2 || item == 3)
+        // }
+
+        // console.log(perfect('1999999999999999999999'));
+
+        var arr=[];
+        for(var i=0;i<100;i++){
+                arr[i]=i;
             }
-            arr.shift()
-            return parseInt(arr.join(''))
-        }
-
-        function isPerfect(arr){
-            return arr.every(item => item == 1 || item == 2 || item == 3)
-        }
-
-        console.log(perfect('1999999999999999999999'));
+        arr.sort(function(){ return 0.5 - Math.random() })
+        console.log(arr);
+        let a = arr.splice(0, 13)
+        console.log(a);
+        console.log(arr);
         
     </script>
 </body>

@@ -193,20 +193,105 @@
 
         // console.log(perfect('1999999999999999999999'));
 
-        var arr=[];
-        for(var i=0;i<100;i++){
-                arr[i]=i;
-            }
-        arr.sort(function(){ return 0.5 - Math.random() })
-        console.log(arr);
-        let a = arr.splice(0, 13)
-        console.log(a);
-        console.log(arr);
+        // var arr=[];
+        // for(var i=0;i<100;i++){
+        //         arr[i]=i;
+        //     }
+        // arr.sort(function(){ return 0.5 - Math.random() })
+        // console.log(arr);
+        // let a = arr.splice(0, 13)
+        // console.log(a);
+        // console.log(arr);
+
+        function sum(num1, num2, num3) {
+            return num1 + num2 + num3;
+        }
+
+        // function curry(func) {
+        //     /* Write Code Here */
+        //     let args = Array.prototype.slice.call(arguments, 1)
+        //     return function(){
+        //         let innerArgs = Array.prototype.slice.call(arguments)
+        //         let finnalArgs = [...args, ...innerArgs]
+        //         return func.apply(null, finnalArgs)
+        //     }
+        // }
+
+        // let curriedSum = curry(sum);
+        // let res;
+
+        // res = curriedSum(1,2,3)
+
+        // console.log(res);
+
+        // function dataProxy(data, path = []) {
+        // /* Write Code Here */
+        //     let flag = false
+        //     let handler = {
+        //         get: function(target, property, receiver){
+        //             if(target[property] == undefined){
+        //                 path.push(target[property])
+        //                 target[property] = {}
+        //                 flag = true
+        //             }
+
+        //             return new Proxy(target[property], handler)
+        //         }
+        //     }
+        //     return new Proxy(data, handler)
+
+            
+        // }
+
+        // let res = dataProxy({ret: true, data:{count:1}}).a.b.c.e
+
+        // console.log(res);
+
+        // function curry(func){
+        //     return function curried(...args){
+        //         if(args.length >= func.length){
+        //             return func.apply(this, args);
+        //         }else{
+        //             return function(...args2){
+        //                 return curried.apply(this, args.concat(args2))
+        //             }
+        //         }
+        //     }
+        // }
+
+        // let curriedSum = curry(sum)
+
+        // console.log(curriedSum(1,2,3));
+        // console.log(curriedSum(1)(2)(3));
+
+        // function getPersonInfo (one, two, three) {
+        // console.log(one)
+        // console.log(two)
+        // console.log(three)
+        // }
+        // const person = 'Lydia'
+        // const age = 21
+        // getPersonInfo `${person} is ${age} years old`
+
+        let p1 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve('success')
+            },1000)
+        })
+
+        let p2 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve('success2')
+            }, 500)
+        })
+
+        Promise.all([p1, p2]).then((result) => {
+            console.log(result)
+        }).catch((error) => {
+            console.log(error)  // 打开的是 'failed'
+        })
         
     </script>
-    <div onclick="console.log(1)">
-        121
-        <div onclick="console.log(2)">112</div>
-    </div>
+    <div style="height: 1000px;min-height: 500px;max-height: 300px;">112</div>
 </body>
 </html>

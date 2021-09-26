@@ -413,6 +413,51 @@
         //     return bei[n]
         // }
         // console.log(fib(1025) % 5);
+        // let obj = {
+        //     a: obj,
+        //     b: c,
+        //     c: b
+        // }
+        // let w = new WeakMap()
+
+        // console.log(obj);
+
+        // function t(s1,s2){
+        //     let s3 = s2.split('')
+        //     s3.reverse()
+        //     s3 = s3.join('')
+        //     let j = 0, k = 0
+        //     for(let i = 0; i < s1.length; i++){
+        //         if(s1[i] == s2[j]){
+        //             j++
+        //         }
+        //         if(s1[i] == s3[k]){
+        //             k++
+        //         }
+        //     }
+        //     if(j == s2.length || k == s3.length){
+        //         return true
+        //     }else {
+        //         return false
+        //     }
+        // }
+
+        // console.log(t('abaesth', 'ash'));
+
+        function t(arr, k){
+            let map = new Map()
+            for(let i = 0; i < arr.length; i++){
+                if(map.has(arr[i])){
+                    map.set(arr[i], map.get(arr[i]) + 1)
+                }else {
+                    map.set(arr[i], 1)
+                }
+            }
+            let mapArr = Array.from(map)
+            mapArr.sort((o1,o2) => o2[0] - o1[0])
+            return mapArr[k - 1][1]
+        }
+        console.log(t([1,2,3,4,4,4], 1));
         
         
     </script>

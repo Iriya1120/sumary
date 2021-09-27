@@ -5,6 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        /* .ball {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            position: absolute;
+            animation: move 5s infinite;
+        }
+
+        @keyframes move {
+            0% {
+                top: 0;
+            }
+
+            100% {
+                top: 200px;
+            }
+        } */
+    </style>
 </head>
 <body>
     <script>
@@ -388,6 +407,7 @@
         //     console.log(total)
         // }
 
+
         // let t = 1
         // let tArr = []
         // for(let i = 0; i < t; i++){
@@ -420,16 +440,70 @@
         //     if(f) console.log('YES')
         //     else console.log('NO')
         // }
-        new Promise((res, rej) => {
-            res(1)
-        }).then(res => {
-            throw Error('111')
-        }).catch((e) => {
-            // console.log(e);
-            console.log(111);
-        })
+        // new Promise((res, rej) => {
+        //     res(1)
+        // }).then(res => {
+        //     throw Error('111')
+        // }).catch((e) => {
+        //     // console.log(e);
+        //     console.log(111);
+        // })
+        // let bei = [0, 1, 1]
+        // function fib(n){
+        //     if(bei[n] != undefined) return bei[n]
+        //     bei[n] = fib(n - 1) + fib(n - 2)
+        //     return bei[n]
+        // }
+        // console.log(fib(1025) % 5);
+        // let obj = {
+        //     a: obj,
+        //     b: c,
+        //     c: b
+        // }
+        // let w = new WeakMap()
+
+        // console.log(obj);
+
+        // function t(s1,s2){
+        //     let s3 = s2.split('')
+        //     s3.reverse()
+        //     s3 = s3.join('')
+        //     let j = 0, k = 0
+        //     for(let i = 0; i < s1.length; i++){
+        //         if(s1[i] == s2[j]){
+        //             j++
+        //         }
+        //         if(s1[i] == s3[k]){
+        //             k++
+        //         }
+        //     }
+        //     if(j == s2.length || k == s3.length){
+        //         return true
+        //     }else {
+        //         return false
+        //     }
+        // }
+
+        // console.log(t('abaesth', 'ash'));
+
+        // function t(arr, k){
+        //     let map = new Map()
+        //     for(let i = 0; i < arr.length; i++){
+        //         if(map.has(arr[i])){
+        //             map.set(arr[i], map.get(arr[i]) + 1)
+        //         }else {
+        //             map.set(arr[i], 1)
+        //         }
+        //     }
+        //     let mapArr = Array.from(map)
+        //     mapArr.sort((o1,o2) => o2[0] - o1[0])
+        //     return mapArr[k - 1][1]
+        // }
+        // console.log(t([1,2,3,4,4,4], 1));
         
     </script>
-    <div style="height: 1000px;min-height: 500px;max-height: 300px;">112</div>
+    <!-- <div style="height: 1000px;min-height: 500px;max-height: 300px;">112</div>
+     -->
+     <div class="ball"></div>
 </body>
 </html>

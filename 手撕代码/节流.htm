@@ -13,7 +13,7 @@
             let timer = null;
             return function() {
                 if(!timer){     // 如果这是在delay毫秒内第一次进入函数，则设置定时器，在delay毫秒内之后触发的所有事件都将会被忽略
-                    setTimeout(() => {
+                    timer = setTimeout(() => {
                         eventHandler();
                         timer = null;   // 这一步很重要，表示delay这个时间段已经结束，可以开始下一个周期
                     }, delay)

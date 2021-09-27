@@ -203,9 +203,9 @@
         // console.log(a);
         // console.log(arr);
 
-        function sum(num1, num2, num3) {
-            return num1 + num2 + num3;
-        }
+        // function sum(num1, num2, num3) {
+        //     return num1 + num2 + num3;
+        // }
 
         // function curry(func) {
         //     /* Write Code Here */
@@ -353,40 +353,81 @@
         //     }
         // }
 
-        let point = 4
-        let startPoint = 1
-        let iconCounts = [3,2,2,1]
-        let total = 0
-        if(iconCounts[startPoint - 1] == 0){
-            console.log(0)
-        }else if(iconCounts[startPoint - 1] < 2 && iconCounts[startPoint - 2] < 2 && iconCounts[startPoint] < 2){
-            console.log(0)
-        }else {
-            let leftPath = 0
-            let rightPath = 0
-            for(let i = startPoint - 2; i >= 0; i--){
-                if(iconCounts[i] - 1 > 0){
-                    total += (iconCounts[i] - 1)
-                    leftPath += 1
-                }else {
-                    total += iconCounts[i]
-                    total += leftPath
-                    break
-                }
-            }
-            for(let j = startPoint; j < point; j++){
-                if(iconCounts[j] - 1 > 0){
-                    total += (iconCounts[j] - 1)
-                    rightPath += 1
-                }else {
-                    total += iconCounts[j]
-                    total += rightPath
-                    break
-                }
-            }
-            total += iconCounts[startPoint - 1]
-            console.log(total)
-        }
+        // let point = 4
+        // let startPoint = 1
+        // let iconCounts = [3,2,2,1]
+        // let total = 0
+        // if(iconCounts[startPoint - 1] == 0){
+        //     console.log(0)
+        // }else if(iconCounts[startPoint - 1] < 2 && iconCounts[startPoint - 2] < 2 && iconCounts[startPoint] < 2){
+        //     console.log(0)
+        // }else {
+        //     let leftPath = 0
+        //     let rightPath = 0
+        //     for(let i = startPoint - 2; i >= 0; i--){
+        //         if(iconCounts[i] - 1 > 0){
+        //             total += (iconCounts[i] - 1)
+        //             leftPath += 1
+        //         }else {
+        //             total += iconCounts[i]
+        //             total += leftPath
+        //             break
+        //         }
+        //     }
+        //     for(let j = startPoint; j < point; j++){
+        //         if(iconCounts[j] - 1 > 0){
+        //             total += (iconCounts[j] - 1)
+        //             rightPath += 1
+        //         }else {
+        //             total += iconCounts[j]
+        //             total += rightPath
+        //             break
+        //         }
+        //     }
+        //     total += iconCounts[startPoint - 1]
+        //     console.log(total)
+        // }
+
+        // let t = 1
+        // let tArr = []
+        // for(let i = 0; i < t; i++){
+        //     tArr[i] = {}
+        //     let arrs = [4,3,3]
+        //     tArr[i].cities = arrs[0]	// 城市数量
+        //     tArr[i].roads = arrs[1]	// 道路数量
+        //     tArr[i].recordLen = arrs[2]	// 小团旅行记录的长度
+        //     tArr[i].validRecord = []	// 有道路连接的路
+        //     // for(let j = 0; j < tArr[i].roads; j++){	// 初始化有道路连接的路
+        //     tArr[i].validRecord[0] = [1,2]
+        //     tArr[i].validRecord[1] = [2,3]
+        //     tArr[i].validRecord[2] = [3,4]
+        //     // }
+        //     // 小团猜测的旅行记录
+        //     tArr[i].guessRecord = [1,2,3,4]
+        //     tArr[i].flag = new Array(tArr[i].guessRecord.length - 1).fill(false)
+        //     let o = 0
+        //     for(let l = 0, m = l + 1; m < tArr[i].guessRecord.length; l++, m++){
+        //         // 判断是否有道路
+        //         for(let n = 0; n < tArr[i].roads; n++){
+        //             if(tArr[i].validRecord[n][0] == tArr[i].guessRecord[l] &&
+        //             tArr[i].validRecord[n][1] == tArr[i].guessRecord[m]){
+        //                 tArr[i].flag[o++] = true
+        //                 break
+        //             }
+        //         }
+        //     }
+        //     let f = tArr[i].flag.every(item => item)
+        //     if(f) console.log('YES')
+        //     else console.log('NO')
+        // }
+        new Promise((res, rej) => {
+            res(1)
+        }).then(res => {
+            throw Error('111')
+        }).catch((e) => {
+            // console.log(e);
+            console.log(111);
+        })
         
     </script>
     <div style="height: 1000px;min-height: 500px;max-height: 300px;">112</div>

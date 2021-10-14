@@ -500,6 +500,159 @@
         //     return mapArr[k - 1][1]
         // }
         // console.log(t([1,2,3,4,4,4], 1));
+
+
+        // let a = 6, b = 9, f = 2, k = 4
+        // let count = 0
+        // let dir = 'toRight'	// 从0到a
+        // let restE = b
+        // let chargeCount = 0	// 充能次数
+        // while(count < k){
+        //     if(dir == 'toRight'){
+        //         restE = restE - f
+        //         if(restE < (a - f) * 2){	// 不能支持一个来回,需要进行充能
+        //             if(restE >= a - f && count == k - 1){
+        //                 count++
+        //                 break
+        //             }else if(b < 2*(a-f) && count < k - 1){
+        //                 console.log(-1)
+        //                 break
+        //             }
+        //             chargeCount++
+        //             restE = b
+        //         }
+        //         // 继续向右走
+        //         restE = restE - (a - f)	// 成功从0到a
+        //         count++
+        //     }else if(dir == 'toLeft'){
+        //         restE = restE - (a - f) // 从a到f点进行判断是否需要充能
+        //         if(restE < 2 * f){
+        //             if(restE >= f && count == k - 1){
+        //                 count++
+        //                 break
+        //             }else if(b < 2 * f && count < k - 1){	// 充完能也不支持一个来回，就直接判断不可以
+        //                 console.log(-1)
+        //                 break
+        //             }
+        //             chargeCount++
+        //             restE = b
+        //         }
+        //         // 继续向左走
+        //         restE = restE - f
+        //         count++
+        //     }
+        //     dir = dir == 'toLeft' ? 'toRight' : 'toLeft'
+        // }
+        // if(count == k){
+        //     console.log(chargeCount)
+        // }
+
+
+        // let inp1 = read_line().split(' ').map(item => parseInt(item))
+        // let n = inp1[0]	// 狗狗数量
+        // let k = inp1[1]	// 预算
+        // let d = inp1[2]	// 预算系数
+        // let likeArr = read_line().split(' ').map(item => parseInt(item))	// 小A对狗狗的喜爱值
+        // let costArr = read_line().split(' ').map(item => parseInt(item))	// 每只狗狗的成本
+        // let monthCostArr = read_line().split(' ').map(item => parseInt(item))	// 每只狗狗每个月的成本
+        // let ys = []
+        // for(let i = 0; i < n; i++){
+        //     ys[i] = d / n * likeArr[i]
+        // }
+        // for(let i = 0; i < n; i++){
+        //     if(ys[i] - monthCostArr[i] < 0){
+        //         console.log(likeArr[i - 1] || -1)
+        //         break
+        //     }
+        // }
+
+
+        // let n = 5	// 狗狗数量
+        // let k = 100	// 预算
+        // let d = 100	// 预算系数
+        // let likeArr = [1,2,3,4,5]	// 小A对狗狗的喜爱值
+        // let costArr = [100,110,110,120,150]	// 每只狗狗的成本
+        // let monthCostArr = [11,22,44,88,176]	// 每只狗狗每个月的成本
+        // let ys = []
+        // let bestDog = -1
+        // for(let i = 0; i < n; i++){
+        //     ys[i] = d / n * likeArr[i]
+        // }
+        // for(let i = 0; i < n; i++){
+        //     if(ys[i] - monthCostArr[i] > 0 && k >= costArr[i]){
+        //         bestDog = likeArr[i]
+        //     }
+        // }
+        // console.log(bestDog)
+
+
+        // let date = new Date('2021-09-13 00:00:00')
+        // let operates = ['+5d']
+        // for(let i = 0; i < operates.length; i++){
+        //     let alpha = operates[i].match(/[a-zA-Z]/)[0]	// 最后的字母
+        //     let addOrSub = operates[i][0]
+        //     let mount = parseInt(operates[i].match(/[0-9]+/)[0])
+        //     if(alpha == 'W'){
+        //         date.setDate(addOrSub == '+' ? date.getDate() + mount * 7 : date.getDate() - mount * 7)
+        //     }else if(alpha == 'd'){
+        //         let day = date.getDate()
+        //         date.setDate(addOrSub == '+' ? date.getDate() + mount : date.getDate() - mount)
+        //     }else if(alpha == 'h'){
+        //         date.setHours(addOrSub == '+' ? date.getHours() + mount : date.getHours() - mount)
+        //     }else if(alpha == 'm'){
+        //         date.setMinutes(addOrSub == '+' ? date.getMinutes() + mount : date.getMinutes() - mount)
+        //     }else if(alpha == 's'){
+        //         date.setSeconds(addOrSub == '+' ? date.getSeconds() + mount : date.getSeconds() - mount)
+        //     }
+        // }
+
+        // let dateObj = {}
+        // dateObj.year = date.getFullYear()
+        // dateObj.month = (date.getMonth() + 1).toString().length == 1 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1
+        // dateObj.day = date.getDate().toString().length == 1 ? '0' + date.getDate() : date.getDate()
+        // dateObj.hour = date.getHours().toString().length == 1 ? '0' + date.getHours() : date.getHours()
+        // dateObj.minute = date.getMinutes().toString().length == 1 ? '0' + date.getMinutes() : date.getMinutes()
+        // dateObj.second = date.getSeconds().toString().length == 1 ? '0' + date.getSeconds() : date.getSeconds()
+        // console.log(dateObj.year + '-' + dateObj.month + '-' + dateObj.day + ' '+ 
+        //             dateObj.hour + ':' + dateObj.minute + ':' + dateObj.second)
+
+        // let res = {}
+        // let obj1 = {a: [1]}
+        // let obj2 = {a: [2]}
+        // for(let key of Object.keys(obj1)){
+        //     if(res[key] == undefined){
+        //         res[key] = obj1[key]
+        //     }else {
+        //         if(typeof res[key] != typeof obj2[key]){
+        //             throw Error()
+        //         }
+        //         if(Array.isArray(res[key])){
+        //             res[key] = res[key].concat(obj1[key])
+        //         }else {
+        //             res[key] = [res[key]].concat(obj1[key])
+        //         }
+        //     }
+        // }
+
+        // for(let key of Object.keys(obj2)){
+        //     if(res[key] == undefined){
+        //         res[key] = obj2[key]
+        //     }else {
+        //         if(typeof res[key] != typeof obj2[key]){
+        //             throw Error()
+        //         }
+        //         if(Array.isArray(res[key])){
+        //             res[key] = res[key].concat(obj2[key])
+        //         }else {
+        //             res[key] = [res[key]].concat(obj2[key])
+        //         }
+        //     }
+        // }
+        // res = Object.assign(obj1, obj2)
+
+        // console.log(res);
+
+        console.log(1237823618.132231123.toLocaleString());
         
     </script>
     <!-- <div style="height: 1000px;min-height: 500px;max-height: 300px;">112</div>

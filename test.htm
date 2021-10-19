@@ -444,20 +444,30 @@
 
         // console.log(t('abaesth', 'ash'));
 
-        function t(arr, k){
-            let map = new Map()
-            for(let i = 0; i < arr.length; i++){
-                if(map.has(arr[i])){
-                    map.set(arr[i], map.get(arr[i]) + 1)
-                }else {
-                    map.set(arr[i], 1)
-                }
+        // function t(arr, k){
+        //     let map = new Map()
+        //     for(let i = 0; i < arr.length; i++){
+        //         if(map.has(arr[i])){
+        //             map.set(arr[i], map.get(arr[i]) + 1)
+        //         }else {
+        //             map.set(arr[i], 1)
+        //         }
+        //     }
+        //     let mapArr = Array.from(map)
+        //     mapArr.sort((o1,o2) => o2[0] - o1[0])
+        //     return mapArr[k - 1][1]
+        // }
+        // console.log(t([1,2,3,4,4,4], 1));
+
+        let arr = [3,6,4,5,8,9,1,2]
+        function t(arr){
+            let dp = [arr[0]]
+            for(let i = 1; i < arr.length; i++){
+                dp[i] = Math.max(dp[i - 1], (dp[i - 2] || 0) + arr[i])
             }
-            let mapArr = Array.from(map)
-            mapArr.sort((o1,o2) => o2[0] - o1[0])
-            return mapArr[k - 1][1]
+            return dp.pop()
         }
-        console.log(t([1,2,3,4,4,4], 1));
+        console.log(t(arr));
         
         
     </script>

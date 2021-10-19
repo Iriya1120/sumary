@@ -45,7 +45,7 @@
 
 ### Vuex和全局变量的区别 ###
 1. Vuex 的状态存储是响应式的
-2. n不能直接改变 store 中的状态，而必须显式的提交mutatio
+2. 不能直接改变 store 中的状态，而必须显式的提交mutation
 
 
 ### Vue 与 React 的异同点 ###
